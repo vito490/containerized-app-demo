@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
   labels:
-    app.feature: feature-abc
+    app.feature: feature-xxx
     app: java-app-1
     app.kubernetes.io/component: java-app
     app.kubernetes.io/instance: java-app
