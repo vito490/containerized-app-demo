@@ -30,9 +30,9 @@ jobs:
             curl -X POST -H "Authorization: UserAccessKey ${{secrets.VELOCITY_TOKEN}}" \
                  -H "Content-Type: application/json" \
                  -H "Accept: application/json" \
-                 --location https://velocity.apps.67a34e6d234e92463ac6bbee.eu1.techzone.ibm.com/release-events-api/graphql \
+                 --location https://velocity.apps.itz-ep6d9a.infra01-lb.fra02.techzone.ibm.com/release-events-api/graphql \
                  -d '{
-                     "query":"mutation {  uploadBuildData(    data: {      id: \"${{github.sha}}\"      name: \"${{github.sha}}\"      status: success      application: {        name: \"hybrid app z and distributed\"        id: \"f944a4a5-9880-4162-96df-cad629f7571b\"      }      url: \"https://github.com/vito490/containerized-app-demo/actions/runs/${{github.run_id}}\"      requestor: \"vito490\"      tenantId: \"5ade13625558f2c6688d15ce\"      revision: \"${{github.sha}}\"      startTime: \"${{ steps.startDate.outputs.startDate }}\" endTime: \"${{ steps.endDate.outputs.endDate }}\" versionName: \"${{github.sha}}\" }  ) {    _id    id    name    status    url    startTime    endTime    requestor    revision    number    labels    source    branch    parameters {      name      value      source    }    application {      id      externalId      name    }  }}",
+                     "query":"mutation {  uploadBuildData(    data: {      id: \"${{github.sha}}\"      name: \"${{github.sha}}\"      status: success      application: {        name: \"containerized-app-demo\"        id: \"234418c4-7452-49d1-9dac-2a7276c219e5\"      }      url: \"https://github.com/vito490/containerized-app-demo/actions/runs/${{github.run_id}}\"      requestor: \"vito490\"      tenantId: \"5ade13625558f2c6688d15ce\"      revision: \"${{github.sha}}\"      startTime: \"${{ steps.startDate.outputs.startDate }}\" endTime: \"${{ steps.endDate.outputs.endDate }}\" versionName: \"${{github.sha}}\" }  ) {    _id    id    name    status    url    startTime    endTime    requestor    revision    number    labels    source    branch    parameters {      name      value      source    }    application {      id      externalId      name    }  }}",
                      "variables":{},
                      "operationName":null
                     }'
